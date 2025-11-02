@@ -1,0 +1,56 @@
+<div class="main-section mx-auto ">
+  <div class="container ">
+    <div class="content row mx-auto">
+      <div class=" col-12">
+        <div class="card mx-2 p-4 text-center">
+          <h1 class="text-capitalize my-3"> notification system</h1>
+          <label for="title" class="text-start text-capitalize">notification title</label>
+          <input id="title" type="text" class="form-control" placeholder="Enter optional title:">
+
+          <br>
+
+          <label for="description" class="text-start text-capitalize">notification text:</label>
+          <textarea id="description" class="form-control" placeholder="Enter notification text.." rows="4" cols="50"></textarea>
+           <br>
+
+          <label for="users" class="text-start text-capitalize">Send notification to:</label>
+          <hr>
+          <div class="radio text-start">
+            <input id="allusers" type="radio" name="users" value="users" (change)="selectionoption='all'" > All users
+            <input id="users" type="radio" name="users" value="Single user" (change)="selectionoption='single'" class="ms-3"> Single user
+
+          </div>
+          <div *ngIf="selectionoption==='single'" >
+            <label for="token" class="text-capitalize text-start">User FCM Token:</label>
+            <input id="token" type="text" class="form-control" placeholder="user fcm token"  >
+          </div>
+
+          <div class="images my-3 row g-3 d-flex align-items-center justify-content-center"  >
+            <div class="col-md-4" *ngFor="let image of images">
+                <div class="">
+                  <img [src]="image.url" class="img-fluid" style="width: 100%; height: auto; cursor: pointer;" [alt]="image.title">
+
+                </div>
+            </div>
+
+
+
+
+          </div>
+
+          <div class="my-3">
+            <button value="submit" class="btn btn-primary">send</button>
+
+          </div>
+
+
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
